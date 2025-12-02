@@ -4,7 +4,7 @@ import qrcode
 from PIL import Image
 
 # REPLACE THIS with your actual website URL after you host it
-website_url = "https://your-website-url.com" 
+website_url = "https://peenalgupta.github.io/" 
 
 # Create QR Code instance
 qr = qrcode.QRCode(

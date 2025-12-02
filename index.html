@@ -77,8 +77,54 @@
             min-height: 90vh;
         }
 
+
+        /* Left panel for photo + QR */
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            width: 260px;
+            margin-right: 3rem;
+            flex-shrink: 0;
+        }
+
+        /* Variant when placed on top of hero text */
+        .left-panel.hero-top {
+            margin-right: 0;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .profile-photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 12px; /* square with slightly rounded corners */
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.12);
+            box-shadow: 0 6px 30px rgba(2,6,23,0.45);
+            background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        }
+
+        .qr-code {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            background: var(--white);
+            padding: 8px;
+            box-shadow: 0 8px 20px rgba(2,6,23,0.35);
+        }
+
         .hero-content {
-            max-width: 600px;
+            flex: 1 1 auto;
+            max-width: none;
+            text-align: center;
         }
 
         .hero h1 {
@@ -98,6 +144,7 @@
             gap: 1rem;
             flex-wrap: wrap;
             margin-bottom: 2rem;
+            justify-content: center;
         }
 
         .tag {
@@ -130,6 +177,7 @@
             margin-top: 2rem;
             display: flex;
             gap: 1.5rem;
+            justify-content: center;
         }
 
         .social-links a {
@@ -336,6 +384,26 @@
             .timeline-item {
                 padding: 1.5rem;
             }
+            .left-panel {
+                margin-bottom: 1.5rem;
+                width: auto;
+                align-items: center;
+            }
+            .left-panel.hero-top {
+                flex-direction: column;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .profile-photo {
+                width: 140px;
+                height: 140px;
+                border-radius: 12px;
+            }
+            .qr-code {
+                width: 100px;
+                height: 100px;
+            }
         }
     </style>
 </head>
@@ -354,12 +422,22 @@
 
     <section class="hero">
         <div class="hero-content">
+            <div class="left-panel hero-top">
+                <img class="profile-photo" src="peenal.jpeg" alt="Peenal Gupta">
+                <!-- <img class="qr-code" src="Peenal_Gupta_Visiting_Card_QR.png" alt="Peenal Gupta QR"> -->
+            </div>
             <h1>Building the Future with <span style="color: var(--accent);">AI & Data Science</span></h1>
             <p>Applied Data Scientist | HPC Researcher | Cybersecurity Innovator. Bridging the gap between software architecture and advanced machine learning.</p>
             
             <div class="hero-tags">
+                <span class="tag">Deep Learning</span>
+                <span class="tag">Distributed Systems</span>
+                <span class="tag">Trustworthy AI</span>
+                <span class="tag">Privacy</span>
+                <span class="tag">Benchmarking LLMs</span>
+                <span class="tag">Intrusion Detection</span>
                 <span class="tag">Generative AI</span>
-                <span class="tag">HPC</span>
+                <span class="tag">LLMs</span>
                 <span class="tag">Federated Learning</span>
                 <span class="tag">Cybersecurity</span>
             </div>
@@ -368,27 +446,31 @@
             
             <div class="social-links">
                 <a href="mailto:peenalgupta123@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-researchgate"></i></a>
+                <a href="https://www.linkedin.com/in/peenal-gupta-b2527376/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/peenalGupta"><i class="fab fa-github"></i></a>
+                <a href="https://www.researchgate.net/profile/Peenal-Gupta"><i class="fab fa-researchgate"></i></a>
             </div>
         </div>
-        <div style="font-size: 10rem; color: rgba(255,255,255,0.1);">
+        <!-- <div style="font-size: 10rem; color: rgba(255,255,255,0.1);">
             <i class="fas fa-network-wired"></i>
-        </div>
+        </div> -->
     </section>
 
     <section id="about">
         <h2 class="section-title">Entrepreneurship & Vision</h2>
         <div class="research-card">
             <h3 class="role">Co-Founder</h3>
-            <div class="company">PinakashieldTech OÜ | Estonia | 2023 - Present</div>
+            <div class="company"><a href="https://pinakashield.com/" target="_blank" style="color: var(--primary); text-decoration: none;">PinakashieldTech OÜ</a> | Estonia | 2023 - Present</div>
             <p>Founded a cybersecurity and AI company aligned with EU digital sovereignty. We develop privacy-preserving Intrusion Detection & Mitigation Systems using Federated Learning and Post-Quantum Cryptography.</p>
         </div>
         <div class="timeline-item" style="border-left-color: var(--accent);">
              <h3 class="role">M.Sc. Applied Data Science & Analytics</h3>
              <div class="company">SRH University Heidelberg, Germany | 2023 - 2025</div>
              <p>Thesis with BASF SE: AI-Driven Chemical Research benchmarking LLMs. Developed frameworks for experiment extraction using domain-specific metrics.</p>
+        </div>
+        <div class="timeline-item" style="border-left-color: var(--accent);">
+             <h3 class="role">B.Tech. Computer Science and Engineering</h3>
+             <div class="company">Rajasthan Technical University, India | 2008 - 2012</div>
         </div>
     </section>
 
@@ -397,7 +479,7 @@
         <div class="timeline">
             
             <div class="timeline-item">
-                <h3 class="role">Data Analyst (Research Collaboration)</h3>
+                <h3 class="role">Data Analyst (Master Thesis | Working Student)</h3>
                 <div class="company">BASF SE | Ludwigshafen, Germany</div>
                 <div class="date">Nov 2024 - Sept 2025</div>
                 <div class="desc">
@@ -452,6 +534,41 @@
                     <ul>
                         <li>Led 10 devs + 4 QA in transportation domain.</li>
                         <li>Enforced code quality and facilitated full Scrum ceremonies.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="role">Technology Analyst</h3>
+                <div class="company">Infosys | Pune, India</div>
+                <div class="date">May 2016 - Aug 2019</div>
+                <div class="desc">
+                    <ul>
+                        <li>Full-stack microservices for new client apps; REST APIs with .NET Core, Angular 4/5, TypeScript; TDD with xUnit.</li>
+                        <li>Additional retail track: Sitecore-based sites for a global wholesale group.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="role">Software Engineer</h3>
+                <div class="company">HCL Technologies | Noida, India</div>
+                <div class="date">Oct 2013 - May 2016</div>
+                <div class="desc">
+                    <ul>
+                        <li>Built C#/WCF services for MSN browser markets; delivered a Windows mobile app (GSG) for marketer workflows.</li>
+                        <li>Web development across Microsoft programs (SharePoint/Sitecore); HTML/CSS/JS/jQuery.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="role">Web Developer</h3>
+                <div class="company">Micronic Infotech | Ajmer, India</div>
+                <div class="date">Jul 2012 - Sep 2013</div>
+                <div class="desc">
+                    <ul>
+                        <li>End-to-end PHP website builds and deployments (PHP/HTML/CSS/JS).</li>
                     </ul>
                 </div>
             </div>
@@ -534,7 +651,7 @@
                     <input type="text" name="name" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label>Email</label>
+                    <label>Your Email</label>
                     <input type="email" name="email" class="form-control" required>
                 </div>
                 <div class="form-group">
@@ -543,9 +660,9 @@
                 </div>
                 <button type="submit" class="btn" style="width: 100%;">Send Message</button>
             </form>
-            <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem; color: #94a3b8;">
+            <!-- <p style="text-align: center; font-size: 0.8rem; margin-top: 1rem; color: #94a3b8;">
                 *Note: To make this form functional, register at Formspree.io and replace YOUR_FORM_ID in the code.
-            </p>
+            </p> -->
         </div>
     </section>
 
