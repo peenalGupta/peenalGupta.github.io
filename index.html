@@ -173,6 +173,24 @@
             transform: translateY(-2px);
         }
 
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--primary);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            border-color: var(--accent);
+        }
+
         .social-links {
             margin-top: 2rem;
             display: flex;
@@ -443,7 +461,10 @@
                 <span class="tag">Cybersecurity</span>
             </div>
 
-            <a href="#contact" class="btn">Get in Touch</a>
+            <div class="button-group">
+                <a href="#contact" class="btn">Get in Touch</a>
+                <button class="btn btn-secondary" onclick="downloadCV()">Download CV</button>
+            </div>
             
             <div class="social-links">
                 <a href="mailto:peenalgupta123@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -671,6 +692,17 @@
         <p>&copy; 2025 Peenal Gupta. All Rights Reserved.</p>
         <p style="font-size: 0.9rem; margin-top: 0.5rem;">Based in Germany | Open to Global Opportunities</p>
     </footer>
+
+    <script>
+        function downloadCV() {
+            const link = document.createElement('a');
+            link.href = 'Peenal_Gupta_CV.pdf';
+            link.download = 'Peenal_Gupta_CV.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 
 </body>
 </html>
